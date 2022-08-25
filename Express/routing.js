@@ -1,4 +1,5 @@
 /*
+Express adalah sebuah webframework untuk membuat web apps
 //? requirement
 express ibaratkan manager mengelola restaurant. 
 //?middleware
