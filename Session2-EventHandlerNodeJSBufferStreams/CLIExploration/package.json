@@ -1,0 +1,18 @@
+{
+  "name": "cliexploration",
+  "version": "1.0.0",
+  "description": "cli exploration from KODE",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "commander",
+    "cli-table",
+    "moment"
+  ],
+  "author": "CPU || Fori Okto Pakpahan",
+  "license": "ISC"
+}
