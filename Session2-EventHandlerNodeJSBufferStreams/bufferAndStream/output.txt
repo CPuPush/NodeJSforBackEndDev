@@ -1,0 +1,1 @@
+test ini adalah text from input.txt ya ges ya

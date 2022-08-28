@@ -10,7 +10,20 @@ biasanya stream digunakan untuk:
 3. membaca dan menulis file
 
 //!piping di stream
-Piping adalah proses dimana suatu output stream akan dijadikan inputan pada stream yang lain. Biasanya digunakan untuk mengambil data dari satu strea,. dan mengirimkan datanya ke stream yang lain.
+Piping adalah proses dimana suatu output stream akan dijadikan inputan pada stream yang lain. Biasanya digunakan untuk mengambil data dari satu stream. dan mengirimkan datanya ke stream yang lain.
 tidak ada batasan berapa banyak data yang bisa di piping.
 */
+const fs = require('fs');
 
+// membuat readable stream
+let readableStream = fs.createReadStream('input.txt');
+
+// membuat writable stream
+let writableStream = fs.createWriteStream('output.txt');
+
+// pipe read dan write
+// read input.txt dam write data ke output.txt
+readableStream.pipe(writableStream);
+
+// menandakan proses piping selesai
+console.log('End Piping');
