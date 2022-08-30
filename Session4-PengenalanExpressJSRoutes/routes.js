@@ -28,6 +28,13 @@ Selain GET, opsi lainnya untuk routing adalah POST, PUT, DELETE.
 dalam konteks restoran, kita perlu membuat permintaan GET untuk memilih meja tertentu dan tempat duduk para pelanggan. GET tidak mengubah atau menambah ke kita punya database. Tetapi, GET hanyua mengambil informasi berdasarkan parameter tertentu.
 Sedangkan POST, Biasanya digunakan untuk menangani informasi yang dikirimkan oleh form di html ke dalam express.
 
+// hal ini berguna untuk handle jika route tidak ada
+app('*', (req, res) => {
+  res.send('Routes doesn't exist')
+});
+
+
+
 */
 
 

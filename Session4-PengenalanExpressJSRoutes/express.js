@@ -21,13 +21,15 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next) => {
-  console.log('request : ', req);
-  console.log('response : ', res);
+  // console.log('request : ', req);
+  // console.log('response : ', res);
   next();
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
+app.get('/test/:id', (req, res) => {
+  const id = req.params.id;
+  console.log(id+id);
+  res.send('Hello World');
 });
 
 app.listen(3000, () => {
