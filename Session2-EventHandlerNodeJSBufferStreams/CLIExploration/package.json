@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [
     "nodejs",
@@ -14,5 +14,11 @@
     "moment"
   ],
   "author": "CPU || Fori Okto Pakpahan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cli-table": "^0.3.11",
+    "commander": "^9.4.0",
+    "moment": "^2.29.4"
+  }
 }

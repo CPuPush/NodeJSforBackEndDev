@@ -8,3 +8,20 @@ Teknologi
 5. moment.js parse, validate, manipulate, and display dates and times in js
 
 */
+const program = require('commander');
+const models = require('./models/manage')
+
+program
+  .version('1.0.0')
+  .description('World CUP 2018 Russian');
+
+program
+  .command('refresh')
+  .alias('r')
+  .description('Get newest data from server.')
+  .action(() => {
+    models.refreshData();
+  });
+
+program
+  .parse(process.argv)
