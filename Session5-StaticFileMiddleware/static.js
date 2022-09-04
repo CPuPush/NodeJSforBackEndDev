@@ -31,6 +31,8 @@ Untuk mengatasi itu, lebih baik kita menggunakan absolute path dari folder tempa
 
 //*app.use("/static", express.static(path.join(__dirname, "public")));
 
+perbedaan sendFile dengan render
+//*sendFile lebih ke general tetapi render lebih ke HTML
 
 */
 

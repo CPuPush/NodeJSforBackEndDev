@@ -67,3 +67,8 @@ app.use('/', (req, res, next) => {
 });
 
 app.listen(3000);
+
+
+/*
+middleware seperti penengah, dimana ketika melakukan suatu aksi terhadap service, middleware melakukan pengecekan dan sebagai penengah. ketika lolos pengecekan maka operasi berjalan.
+*/
