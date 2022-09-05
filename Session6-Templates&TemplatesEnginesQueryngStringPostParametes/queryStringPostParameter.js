@@ -39,6 +39,39 @@ app.get('/', async(req, res) => {
 constoh dari atas, kita menganggap page dan limit selalu ada. Jika tidak ada salah satu dari parameter tersebut ada dalam URL, maka kita akan menerima undefined untuk kedua parameter page dan limit.
 contoh kali ini adalah dengan menggunakan package dari querystring dan URL.
 const url = require('url');
+const querystring = require('querystring');
+
+let rawUrl = 'https://stack.com/?page=28&limit=3'
+
+let parseUrl = url.parse(rawUrl);
+
+//? menggunakan package querystring untuk memparsing query string.
+let parsedQs = querystring.parse(parsedUrl.query);
+
+hasil dari atas adalah
+{
+  protocol: 'https:',
+  slashed: true,
+  auth: null,
+  host: 'stack.com',
+  port: null,
+  hostname: 'hacktiv8.com',
+  hash: null,
+  search: '?page=5&limit=6',
+  query: 'page=5&limit=6',
+  pathname: '/',
+  path: '/?page=5&limit=6',
+  href: 'https://stack.com/?page=28&limit=3'
+
+}
+kita dapat menggunakan package querystring untuk memparsing query string yang sebenarnya yang ada didalam contoh.
+
+objek dari parseQ berisi:
+{
+  page: '5',
+  limit: '6'
+}
+
 
 */
 
