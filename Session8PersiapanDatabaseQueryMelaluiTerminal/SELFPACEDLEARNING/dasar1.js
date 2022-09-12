@@ -1,7 +1,7 @@
 /*//! TIPE DATA PostgreSQL
 //* Numerik
 Berupa angka saja, integer, small int
-
+//?smallint, integer. 
 create table tb_test(
 testing smallint => testing adalah 
 );
@@ -15,7 +15,7 @@ insert into tb_test values (2147483647); => 2147483647 adalah jumlah maximal yan
 
 numeric adalah diperuntukkan untuk tipe data decimal
 
-real, sama seperti decimal tetapi kuota lebih banyak
+real, sama seperti decimal/numeric tetapi kuota lebih banyak
 //* Karakter
 Berupa karakter
 tipe data dengan text tidak memiliki batasan, tetapi karakter memiliki batasan. 

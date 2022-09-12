@@ -10,31 +10,54 @@ kita akan mengekstrak parameter page dan limit sehingga kita tau path mana yang 
 Query parameters dapat diambil dari objek query pada reequest object yang nantinya dikirim ke rute / path kita. Itu dalam bentuk objek dimana kita dapat langsung mengakses query parameters yang kita butuhkan. Dalam hal ini, Express menangani semua penguraian URL untuk kita dan menampilkan parameter yang diambil sebagai objek ini. 
 Contohnya adalha sebagai berikut.
 */
-const express = request('express');
+const express = require('express');
 const bodyParser = require('body-parser');
-const url = require('url');
-const querystring = require('querystring');
-const article = require('./models').Article;
+// // const url = require('url');
+// const queryString = require('querystring');
+
+// let rawUrl = "https://hacktiv8.com/?page=1&limit=20";
+// let parsedUrl = url.parse(rawUrl);
+// let parsedQuery = queryString.parse(parsedUrl.query);
+
+// console.log(parsedUrl);
+// console.log(parsedQuery);
+
+
+
+
+
+
+
+
+// const article = require('./models').Article;
 
 let app = express();
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json());
 
 // function to handle the root path
-app.get('/', async(req, res) => {
+app.get('/', (req, res) => {
   // access the provided page and limit query parameters
   let page = req.query.page;
   let limit = req.query.limit;
 
-  let articles = await Article.findAll()
-    .paginate({page: page, limit: limit})
-    .exec();
-  
-    // return the articles to the rendering engine
-    res.render('index', {
-      articles: articles
-    })
+  console.log(page, limit);
+  res.send(`page: ${page}, limit: ${limit}`);
+  // let articles = await Article.findAll()
+  //   .paginate({page: page, limit: limit})
+  //   .exec();
+   
+  //   // return the articles to the rendering engine
+  //   res.render('index', {
+  //     articles: articles
+  //   })
 });
+
+app.post('/', (req, res) => {
+  const names = req.body.names;
+  res.send(`please silent bro ${names}`);
+});
+app.listen(3000);
 /*
 constoh dari atas, kita menganggap page dan limit selalu ada. Jika tidak ada salah satu dari parameter tersebut ada dalam URL, maka kita akan menerima undefined untuk kedua parameter page dan limit.
 contoh kali ini adalah dengan menggunakan package dari querystring dan URL.

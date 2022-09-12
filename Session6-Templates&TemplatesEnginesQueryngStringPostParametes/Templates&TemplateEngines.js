@@ -28,6 +28,7 @@ app.set('view engine', 'pug');
 
 // routing
 app.get('/', (req, res) => {
+  // render butuh template engine
   res.render('index', { title:'hey', message: 'hello there!' });
 });
 
