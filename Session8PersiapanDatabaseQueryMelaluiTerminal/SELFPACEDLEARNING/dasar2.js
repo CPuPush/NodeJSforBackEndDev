@@ -25,14 +25,12 @@ on delete cascade, ketika pada induk table , record dihapus, maka record pada re
 //! Where Clause & operator perbandingan
 /*
 kita bisa melakukan penjacarian penghapusan dengan where clause. 
-operator pada postgress //* =, != (<>), >, <, 
+operator pada postgres //* =, != (<>), >, <, <=. >= 
 */
 //! Group By, Having, Order By Clause
 /*
 order by biasanya mengurutkan dari ascending atau descending
 //* select nama, gaji from tb_cashier order by gaji asc;
-
-
 */
 
 //! Check Constraints
