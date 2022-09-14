@@ -38,7 +38,7 @@ where umur > 23 OR gaji > '1000000';
 -- operator like
 select * from tb_cashier
 where nama like 'a%'; -->artinya semua nama yang huruf depannya p
--- %a% -> artinya mencari yang huruf tengahnya a
+-- %a% -> artinya mencari yang hur uuf tengahnya a
 -- %a => search where word that include 'a' behind 
 
 -- operator _ => operator search which fill in one char
