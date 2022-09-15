@@ -1,4 +1,4 @@
- = -- menjelaskan seberapa cepat eksekusi query.
+-- menjelaskan seberapa cepat eksekusi query.
 EXPLAIN select * from tb_cashier where nama = 'fori';
 
 
@@ -115,7 +115,17 @@ set harga = array_append(harga, 99000);
 -- menambah array lebih dari satu
 update tb_data_penjualan
 set harga = array_cat(harga, array[2000, 15000])
+-- delete in array
+update tb_data_penjualan 
+set harga = array_remove(harga, 10000);
 
+
+-- searching array
+select * from tb_data_penjualan
+where harga[1]= 20000  
+or harga[2]=20000
+or harga[3] = 20000
+or harga[4] = 20000
 
 
 select * from public.tb_cashier;
