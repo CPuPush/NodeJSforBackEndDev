@@ -25,5 +25,5 @@ parameter yang bisa dijadikan sebagai output, tetapi tidak bisa menjadi inputan.
 character varying artinya length menyesuaikan.
 kenapa ada public.tb_name
 karena ketika kita bisa membuat schema. maka ketika kita membuat banyak schema, kita harus panggil dulu schema lalu panggil.
-tetapi defaulnya adalah public
+tetapi defaultnya adalah public
 */

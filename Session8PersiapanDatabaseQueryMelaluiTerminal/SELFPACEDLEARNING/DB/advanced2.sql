@@ -176,10 +176,33 @@ update tb_cashier set alamat = 'laguboti' where id_cashier = 1;
 update tb_cashier set umur = 100 where id_cashier = 2;
 
 -- update trigger on table wkkwk
+alter trigger berubah on tb_cashier
+rename to berubah_alamatnya;
+-- menonaktifkan trigger
+alter table tb_cashier
+disable trigger berubah_alamatnya;
+-- ubah maka pada trigger tidak terdeteksi
+update tb_cashier set alamat = 'nano'
+where id_cashier = 4;
 
+-- activate again
+alter table tb_cashier enable trigger berubah_alamatnya;
 
+-- "disable all" to disable all trigger
+-- delete trigger
+drop trigger berubah_alamatnya on tb_cashier;
 
-
+-- TRANSACTION
+-- begin;
+-- commit;
+-- rollback;-> jika tidak ingin query dijalankan, alias bisa dikemnalikan yang sudah di lakukan perubahan, sekaligus mengakhiri
+begin;
+delete from tb_barang where id_barang = 4;
+-- mengembalikan id barang yang dihapus
+rollback;
+begin;
+commit; -- sama seperti submit, maka perubahan yang dilakukan akan disimpan
+select * from tb_barang;
 
 select * from tb_pemesanan;
 select * from tb_cashier;
