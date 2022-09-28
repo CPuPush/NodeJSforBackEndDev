@@ -48,14 +48,17 @@ UNION
 select p.nama, s.status
 from tb_pemesanan as p
 right outer join tb_status as s
-on p.id_status = s.id_status ``
+on p.id_status = s.id_status
 
 -- union all > ada duplikasi nama, tetapi union tidak ada
 
--- sub query select 
+-- sub query select
+select umur, gaji from tb_cashier
+where gaji > '1000000';
+
 select * from tb_cashier
 where umur 
-in (select umur from tb_cashier where gaji > '1000000')
+in (select umur from tb_cashier where gaji > '1000000');
 -- artinya mendapatkan umur dengan gaji diatas 1jt, sehingga umur itu nantinya dipanggil 
 
 -- create table
@@ -66,10 +69,15 @@ create table tb_langganan(
 );
 -- sub query
 insert into tb_langganan 
-select * from tb_pemesanan
+select id_pemesanan from tb_pemesanan
 where id_pemesanan 
 in (select id_pemesanan from tb_pemesanan);
+select * from tb_langganan;
 -- harus memiliki row yang sama antar 2 table
+
+-- delete all records
+delete from tb_langganan
+returning *;
 
 -- sub query dari update
 update tb_cashier
@@ -112,6 +120,11 @@ set harga[3]=262626 where nama = 'dark'
 -- menambahkan array dibelakang
 update tb_data_penjualan 
 set harga = array_append(harga, 99000);
+-- test append
+update tb_data_penjualan
+set harga = array_append(harga, 99)
+where id_penjualan = 1;
+select * from tb_data_penjualan;
 -- menambah array lebih dari satu
 update tb_data_penjualan
 set harga = array_cat(harga, array[2000, 15000])
@@ -125,7 +138,7 @@ select * from tb_data_penjualan
 where harga[1]= 20000  
 or harga[2]=20000
 or harga[3] = 20000
-or harga[4] = 20000
+or harga[4] = 20000;
 
 
 select * from public.tb_cashier;

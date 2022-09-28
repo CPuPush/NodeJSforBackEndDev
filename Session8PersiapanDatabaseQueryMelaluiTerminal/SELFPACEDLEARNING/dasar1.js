@@ -1,6 +1,6 @@
 /*//! TIPE DATA PostgreSQL
 //* Numerik
-Berupa angka saja, integer, small int
+Berupa angka saja, integer, smallint
 //?smallint, integer. 
 create table tb_test(
 testing smallint => testing adalah 

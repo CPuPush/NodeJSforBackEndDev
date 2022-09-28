@@ -8,17 +8,17 @@ as $$
 insert into tb_pemesanan(id_pemesanan, nama)
 values (a, b);
 $$;
-
+select * from tb_pemesanan;
 -- see procedure in 'Procedures' from public list.
 
 -- panggil procedure
-call pemesanan_baru(5, 'koe');
+call pemesanan_baru(6, 'forioktopakpahan');
 
 
 -- FUNCTION
 -- function memiliki return 
 create or replace function jumlah_cashier()
-returns integer as $jumlah$ --sepertinya jumlah adalah deklarasi fungsi yang menjadi variabel
+returns integer as $jumlah$ --menetapkan kembalian integer dengan parameter jumlah
 declare 
 	jumlah integer;
 BEGIN
@@ -26,7 +26,10 @@ BEGIN
 	return jumlah;
 end;
 $jumlah$ language plpgsql;
--- artinya menghitung field dan memasukaan ke jumlah
+
+select count(*) from tb_cashier;
+
+-- artinya menghitung field dan memasukkan ke jumlah
 
 -- panggil fungsi
 select jumlah_cashier()
