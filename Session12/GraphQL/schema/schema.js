@@ -4,7 +4,7 @@ const userSchema = require('./user');
 let schema = buildSchema(`
   type Query {
     hello: String
-    hacktiv8: String
+    hacktiv8: String 
     user: User
   }
   ${userSchema}
