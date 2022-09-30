@@ -20,20 +20,16 @@ let root = {
       } catch (error) {    
         return [];
       }
-        // axios
-        //   .get('http://jsonplaceholder.typicode.com/users')
-        //   .then(({data}) => {
-        //     return data;
-        //   })
-        //   .catch((err) => {
-        //     []
-        //   })
   },
   createUser: (args) => {
     const {id, username} = args;
     temp.push(({id, username}));
-
     return "successfully create one user";
+    /*
+    type Mutation {
+    //* createUser(id: Int!, username: String!):String
+  }
+    */
   },
   getCreatedUser: () =>{
     return temp;
