@@ -2,7 +2,7 @@ const db = require('../config/db');
 
 class Todo{
   // get all todos
-  async getTodos(){
+  static async getTodos(){
     let result = await db.query(
       `SELECT * from todos`
     ).catch(console.log);
@@ -10,7 +10,7 @@ class Todo{
   };
 
   // create a todo
-  async createTodo(todo){
+  static async createTodo(todo){
     await db.query(
       'INSERT INTO todos(title, checked) VALUES ($1, $2)',[todo.title, false]
     ).catch(console.log);
@@ -18,7 +18,7 @@ class Todo{
   };
 
   // update a todo
-  async updateTodo(todoId){
+  static async updateTodo(todoId){
     // get the previous todo
     let original_todo = await db.query(
       `SELECT * FROM todos WHERE id = $1`,[parseInt(todoId)]
@@ -30,7 +30,7 @@ class Todo{
   };
 
   // delete a todo
-  async deleteTodo(todoId){
+  static async deleteTodo(todoId){
     // delete todo
     await db.query(
       `DELETE FROM todos WHERE id=$1`, [parse(todoId)]
