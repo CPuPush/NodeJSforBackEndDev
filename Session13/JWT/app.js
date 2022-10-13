@@ -2,9 +2,52 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const router = require('./router');
+const jwt = require('jsonwebtoken');
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+// sementara anggap variabel db ini sebagai sumber
+let data = {
+  user: 'fauzan',
+  passw : 'tianacantika'
+}
+// routing for jwt
+app.get('/', (req, res) => {
+  res.send('selamat datang di integrasi JWT Tiana')
+});
+// verif with middleware
+function verifikasi (req, res, next) {
+  let getHeader = req.body['auth'];
+  if(typeof getHeader !== 'undefined'){
+    req.token = getHeader;
+    next();
+  }else{
+    res.sendStatus(403);
+  }
+}
+
+jwt.sign(
+  {
+    data: data
+  },
+  "secret",
+  (err, token) => {
+    console.log(token);
+  }
+)
+
+// memberikan list biodata
+app.get('/data', verifikasi, (req, res) => {
+  jwt.verify(req.token, "secret", (err, dataAuth) => {
+    if(err){
+      res.sendStatus(403);
+    } else {
+      res.json(data)
+    }
+  })
+})
+
 
 app.use(router);
 
