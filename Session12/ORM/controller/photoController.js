@@ -26,6 +26,9 @@ class PhotoController {
       const dataId = await Photo.findOne({
         where: {id:id}
       })
+      if(dataId == null){
+        return res.status(404).json({message:"Not Found"});
+      }
       return res.status(200).json(dataId);
     } catch (error) {
       return res.status(500).json(error)
@@ -41,8 +44,10 @@ class PhotoController {
         caption,
         image_url
       });
+      if(!title || !caption || !image_url){
+        return res.status(400).json({message : "bad request"});
+      }
       return res.status(201).json(create);
-
     } catch (error) {
       return res.status(500).json(error)
     }
