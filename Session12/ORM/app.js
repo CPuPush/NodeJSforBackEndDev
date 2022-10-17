@@ -8,9 +8,15 @@ app.use(express.json());
 
 app.use(router);
 
-app.listen(port, () => {
-  console.log(`Running on port http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Running on port http://localhost:${port}`);
+// });
+
+// ! FOR TESTING
+module.exports = app;
+
+
+
 
 /*
 //* npx sequelize init

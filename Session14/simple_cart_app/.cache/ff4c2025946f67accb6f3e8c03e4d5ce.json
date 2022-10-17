@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"const incrementQty = (qty) => qty + 1;\r\nconst decrementQty = (qty) => qty - 1;\r\n\r\nmodule.exports = { incrementQty, decrementQty };\r\n"},"hash":"967fd6d4a913c45a14e4664ff86e9ac3"}

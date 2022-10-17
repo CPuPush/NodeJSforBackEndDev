@@ -13,7 +13,7 @@ module.exports = {
     })
 
     await queryInterface.addConstraint("Photos", {
-      field: ["UserId"],
+      fields: ["UserId"],
       type: "foreign key",
       name: "user_fk",
       references: {
