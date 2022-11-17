@@ -38,7 +38,7 @@ app.listen(8080, () => {
 
 // ! npx sequelize db:create
 
-// ! npx sequelize model:generate --name User --atributes username:string password:string
+// ! npx sequelize model:generate --name User --attributes username:string password:string
 //* membuat model
 
 // ! npx sequelize seed:generate --name "seeding_products_data"

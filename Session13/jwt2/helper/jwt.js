@@ -16,14 +16,13 @@ module.exports = {
   verifyToken
 }
 
-    // const signToken = jwt.sign({
-        //   id: dataUser.id,
-        //   username: dataUser.username
-        // },
-        // "SECRET"//seperti kata kunci yang ingin di verify
-        // ,{
-        //   expiresIn: '5s'
-        // }
-        // );
-
- // const verifyToken = jwt.verify(signToken, "SECRET");
+// const signToken = jwt.sign({
+    //   id: dataUser.id,
+    //   username: dataUser.username
+    // },
+    // "SECRET"//seperti kata kunci yang ingin di verify
+    // ,{
+    //   expiresIn: '5s'
+    // }
+    // );
+// const verifyToken = jwt.verify(signToken, "SECRET");

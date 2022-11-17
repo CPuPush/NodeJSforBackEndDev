@@ -1,10 +1,11 @@
-const {Product}  = require('../models');
+const {User, Product}  = require('../models');
 
 class ProductController {
   static async getAllProducts (req, res){
     try{
       const idUser = res.dataUser.id;
       const dataProduct = await Product.findAll({
+        include: User,
         where:{
           // UserId: +idUser => if we wanna to get all product with id user
           UserId: +idUser

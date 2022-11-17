@@ -1,3 +1,21 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const routes = require('./src/routes/todos');
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(cors());
+
+app.use(routes);
+app.set("view engine", "ejs");
+app.set("views", "src/views/pages");
+app.use("/static", express.static(`${__dirname}/public`));
+app.listen(3000, () => {
+  console.log(`listening at http://localhost:3000`);
+});
+
+
 /* //! RESTFUL API
 REST merupakan singkatan dari //?Representational State Transfer.
 Secara singkat REST adalah cara kita untuk menggunakan resource(fungsi/method) yang ada di sebuah server dengan mengakses URL yang telah disediakan.
